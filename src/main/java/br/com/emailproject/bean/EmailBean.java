@@ -1,4 +1,4 @@
-package br.com.emailproject.dto;
+package br.com.emailproject.bean;
 
 import java.io.Serializable;
 
@@ -6,6 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import br.com.emailproject.dto.EmailLayout;
 import br.com.emailproject.model.Email;
 import br.com.emailproject.service.EmailService;
 

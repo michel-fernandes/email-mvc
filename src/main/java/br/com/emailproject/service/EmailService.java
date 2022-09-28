@@ -53,7 +53,7 @@ public class EmailService extends Thread{
 	public void run() {
 			
 		Properties properties = new Properties();
-		properties.put("mail.smtp.ssl.enable", "true");
+		properties.put("mail.smtp.starttls.enable", true);
 		properties.put("mail.smtp.host", System.getProperty("enviando-email.mail.smtp.host"));
 		properties.put("mail.smtp.port", System.getProperty("enviando-email.mail.smtp.port"));
 		
@@ -63,7 +63,7 @@ public class EmailService extends Thread{
 		for (Email email : emails) {
 			try {
 				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress(System.getProperty("enviando-email.mail.smtp.port")));
+				message.setFrom(new InternetAddress(System.getProperty("enviando-email.mail.from")));
 				
 				if(email.getDestinatario().contains("/")) {
 					List<InternetAddress> emailsLocal = new ArrayList<>();
